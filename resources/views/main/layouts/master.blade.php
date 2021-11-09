@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="{{ app()->getLocale() }}">
 <head>
     <base href="{{ asset('') }}">
     <meta charset="UTF-8">
@@ -23,41 +22,8 @@ esuhai, kaizen, trường nhật ngữ, truongnhatngu, trường tiếng, truong
 </head>
 
 <body>
-    <header>
-        <div class="top-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 flex-box">
-                        <div class="logo"><a href="#"><img src="main_template/img/logo.png" alt="logo"></a>
-                        </div>
-                        <div class="hamburger"></div>
-                        <nav class="header-nav">
-                            <li><a class="active" href="index.html">trang chủ</a></li>
-                            <li><a href="don-hang.html">đơn hàng</a></li>
-                            <li><a href="dieu-duong-2.html">Điều dưỡng</a></li>
-                            <li><a href="tin-tuc.html">tin tức</a></li>
-                            <li><a href="#vn"><img src="main_template/img/flagvn.png" alt="flagvn.png"></a></li>
-                            <li><a href="#jp"><img src="main_template/img/flagjp.png" alt="flagjp.png"></a></li>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="nav-mobile">
-            <nav>
-                <li><a href="#vn"><img src="main_template/img/flagvn.png" alt="flagvn.png"></a><a href="#jp"><img
-                            src="main_template/img/flagjp.png" alt="flagjp.png"></a></li>
-                <li><a class="active" href="index.html">trang chủ</a></li>
-                <li><a href="don-hang.html">đơn hàng</a></li>
-                <li><a href="dieu-duong-2.html">Điều dưỡng</a></li>
-                <li><a href="tin-tuc.html">tin tức</a></li>
-            </nav>
-        </div>
-    </header>
-@yield('content')
-    <section class="back-2-top">
-        <div class="btn-back-2-top"></div>
-    </section>
+    @include('main.layouts.menu')
+    @yield('content')
     @include('main.layouts.footer')
 </body>
 

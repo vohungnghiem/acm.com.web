@@ -7,3 +7,5 @@ foreach (File::allFiles(__DIR__ . DIRECTORY_SEPARATOR . "web") as $partial) {
 Route::get('/linkstorage', function () {
     Artisan::call('storage:link'); // thay php artisan storage:link
 });
+// language
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);

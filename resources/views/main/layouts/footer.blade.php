@@ -1,3 +1,6 @@
+<section class="back-2-top">
+    <div class="btn-back-2-top"></div>
+</section>
 <footer>
     <div class="container">
         <div class="row">

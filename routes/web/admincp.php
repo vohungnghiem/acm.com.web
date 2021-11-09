@@ -18,8 +18,6 @@ Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers','pref
 		Route::post('/','RoleController@post_role_permission');
 	});
 });
-// language
-Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 
 Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin','prefix' => 'admincp'], function() {
     Route::get('/','HomeController@index');
