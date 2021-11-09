@@ -5,7 +5,7 @@
         if (App::getLocale() == 'vi') {
             $showmenu = $item->ten;
         }else{
-            $os = array(3,4);
+            $os = array(2,3,4);
             if (!in_array($item->id, $os)) {
                 $showmenu = $item->tenjp;
             }

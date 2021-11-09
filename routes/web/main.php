@@ -1,8 +1,9 @@
 <?php
 Route::group(['namespace' => 'App\Http\Controllers\Main'], function() {
 	Route::get('/','MainController@home');
-    Route::get('/gioithieu','MainController@gioiThieu');
-
+    Route::get('gioithieu','MainController@gioiThieu');
+    Route::get('giayphep','MainController@giayphep');
+    Route::post('/storeLienHe', 'MainController@storeLienHe');
     //donhang
     Route::get('donhang','DonHangController@index');
     Route::get('donhang/{id}','DonHangController@getiddonhang'); // mat
@@ -13,13 +14,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function() {
 });
 
 // Route::get('lienhe','LienHeController@index');
-
-// Route::get('tintuc','TinTucController@index');
-
-
-
-// //giayphep
-// Route::get('giayphep','GiayPhepController@index');
 
 // //lienhe
 // Route::post('/store', 'HomeController@store');

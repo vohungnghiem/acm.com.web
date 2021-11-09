@@ -23,4 +23,30 @@ class MainController extends Controller
     public function gioithieu() {
         return view('main.gioithieu');
     }
+    public function giayphep() {
+        return view('main.giayphep');
+    }
+    public function storeLienHe(Request $request){
+        // $item = new Lienhe;
+        // $item->hovaten=$request->hovaten;
+        // $item->email=$request->email;
+        // $item->tieude=$request->tieude;
+        // $item->sodienthoai=$request->sodienthoai;
+        // $item->noidung=$request->noidung;
+        // $item->created_at=$request->created_at;
+        // $item->tinhtrang=0;
+        // $item->save();
+        DB::table('vhn_lienhes')->insert(
+            [
+                'hovaten' => $request->hovaten,
+                'email' => $request->email,
+                'tieude' => $request->tieude,
+                'sodienthoai' => $request->sodienthoai,
+                'noidung' => $request->noidung,
+                // 'created_at' => $request->created_at,
+                'tinhtrang' => 0
+            ]
+        );
+        return redirect('/')->with('alert','Gửi thành công!');
+    }
 }

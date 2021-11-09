@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="main_template/css/global.min.css">
     <link rel="stylesheet" href="main_template/css/main.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
     <title>@yield('title')</title>
     <meta name="keywords"
         content="Việc làm tiếng Nhật, vieclamtiengnhat, việc làm tiếng nhật, thực tập sinh, thuctapsinh, tu nghiệp sinh, tunghiepsinh, xuất khẩu lao động, xuatkhaulaodong,

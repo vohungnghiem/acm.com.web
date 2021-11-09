@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4">
                 <h2 class="title">@lang('main.home-lienhe-title1')</h2>
-                <form class="contact-form" method="post"  action="store">
+                <form class="contact-form" method="post"  action="storeLienHe">
                     {{ csrf_field() }}
                     <div class="form-item">
                         <input type="text" name="hovaten" placeholder="@lang('main.home-lienhe-title2')" value="{{ old('hovaten') }}" required>
@@ -18,9 +18,9 @@
                         <input type="text" name="sodienthoai" placeholder="@lang('main.home-lienhe-title4')"  value="{{ old('sodienthoai') }}">
                     </div>
                     <div class="form-item">
-                        <textarea id="content" name="noidung" placeholder="@lang('mains.home-lienhe-title5')" value="{{ old('noidung') }}" required></textarea>
+                        <textarea id="content" name="noidung" placeholder="@lang('main.home-lienhe-title5')" value="{{ old('noidung') }}" required></textarea>
                     </div>
-                    <input class="contact-send" type="submit" value="@lang('mains.home-lienhe-title6')">
+                    <input class="contact-send" type="submit" value="@lang('main.home-lienhe-title6')">
                 </form>
             </div>
             <div class="col-md-8">
