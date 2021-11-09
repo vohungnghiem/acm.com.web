@@ -20,4 +20,7 @@ class MainController extends Controller
         $hinhanh = DB::table('vhn_hinhanhs')->where('stt','=','1')->orderBy('id','desc')->get();
         return view('main.home',compact('banner','gioithieuhome','gioithieuhomefirst','muctieu','hosocanchuanbi','camnhanhocvien','tintuc','tintucorther','truonghoc','hinhanh'));
     }
+    public function gioithieu() {
+        return view('main.gioithieu');
+    }
 }
