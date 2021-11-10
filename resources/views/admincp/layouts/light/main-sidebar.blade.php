@@ -68,12 +68,12 @@
                         </ul>
                     </li>
                 @endif
-                {{-- <li class="nav-item">
-                    <a href="suppliers" class="nav-link">
+                <li class="nav-item">
+                    <a href="admincp/menus" class="nav-link">
                         <i class="nav-icon fas fa-user-shield"></i>
-                        <p>Nhà cung cấp</p>
+                        <p>Menu</p>
                     </a>
-                </li> --}}
+                </li>
 
             </ul>
         </nav>

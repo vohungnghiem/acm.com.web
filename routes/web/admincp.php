@@ -31,11 +31,22 @@ Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin'
         Route::post('remove_img','AccountController@remove_img');
         Route::post('destroy', 'AccountController@destroy');
     });
+    Route::group(['prefix' => 'menus'],function(){
+        Route::get('/','MenuController@index');
+        Route::get('create','MenuController@create');
+        Route::post('store', 'MenuController@store');
+        Route::get('edit/{id}', 'MenuController@edit');
+        Route::post('{id}/update', 'MenuController@update');
+        Route::post('status','MenuController@status');
+        Route::post('remove_img','MenuController@remove_img');
+        Route::post('destroy', 'MenuController@destroy');
+    });
 });
-
+// database
 Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin','prefix' => 'admincp'], function() {
     Route::get('user','DatatablesController@user');
 });
+// import - export
 Route::group(['namespace' => 'App\Http\Controllers'], function() {
     Route::get('export/', 'ExportController@export');
     Route::get('import/', 'ImportController@getImport');
