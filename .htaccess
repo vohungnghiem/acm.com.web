@@ -4,7 +4,11 @@
     </IfModule>
 
     RewriteEngine On
-	
+    # https to http
+	RewriteCond %{HTTPS} on
+    RewriteRule ^(.*)$ http://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # public
 	RewriteRule ^(.*)$ public/$1 [L]
 
     # Handle Authorization Header
