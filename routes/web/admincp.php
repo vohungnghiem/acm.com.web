@@ -41,6 +41,16 @@ Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin'
         Route::post('remove_img','MenuController@remove_img');
         Route::post('destroy', 'MenuController@destroy');
     });
+    Route::group(['prefix' => 'banners'],function(){
+        Route::get('/','BannerController@index');
+        Route::get('create','BannerController@create');
+        Route::post('store', 'BannerController@store');
+        Route::get('edit/{id}', 'BannerController@edit');
+        Route::post('{id}/update', 'BannerController@update');
+        Route::post('status','BannerController@status');
+        Route::post('remove_img','BannerController@remove_img');
+        Route::post('destroy', 'BannerController@destroy');
+    });
 });
 // database
 Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin','prefix' => 'admincp'], function() {
