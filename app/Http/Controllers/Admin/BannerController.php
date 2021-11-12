@@ -14,50 +14,46 @@ class BannerController extends Controller
     public function create() {
         return view('admincp.banners.create');
     }
-    public function edit($id)
-    {
-        try {
-            $menu = DB::table('vhn_menu')->where('id',$id)->first();
-            return view('admincp.menus.edit',['menu'=>$menu]);
-        } catch (\Throwable $th) {
-            return redirect()->back()->with('error');
-        }
-    }
     public function store(Request $request)
     {
         try {
-            $id = DB::table('vhn_menu')->insertGetId(
+            $id = DB::table('vhn_banners')->insertGetId(
                 [
-                    'ten'=> $request->ten,
-                    'tenjp'=> $request->tenjp,
-                    'link'=> $request->link,
+                    'image'=> $request->image,
                     'stt'=> $request->status == 'on' ? 1 : 0
                 ]);
-            return redirect('admincp/menus/edit/'.$id)->with('success','Success !');
+            return redirect('admincp/banners/edit/'.$id)->with('success','Success !');
         } catch (\Throwable $th) {
-            return redirect()->back()->with('error','Tài khoản không có quyền chỉnh sửa!');
+            return redirect()->back()->with('error','error!');
+        }
+    }
+    public function edit($id)
+    {
+        try {
+            $banner = DB::table('vhn_banners')->where('id',$id)->first();
+            return view('admincp.banners.edit',['banner'=>$banner]);
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error');
         }
     }
     public function update(Request $request, $id)
     {
         try {
-            DB::table('vhn_menu')->where('id',$id)->update(
+            DB::table('vhn_banners')->where('id',$id)->update(
                 [
-                    'ten'=> $request->ten,
-                    'tenjp'=> $request->tenjp,
-                    'link'=> $request->link,
+                    'image'=> $request->image,
                     'stt'=> $request->status == 'on' ? 1 : 0
                 ]);
-            return redirect('admincp/menus/edit/'.$id)->with('success','Success !');
+            return redirect('admincp/banners/edit/'.$id)->with('success','Success !');
         } catch (\Throwable $th) {
-            return redirect()->back()->with('error','Tài khoản không có quyền chỉnh sửa!');
+            return redirect()->back()->with('error','error!');
         }
     }
     public function status(Request $request){
         try {
-            $item = DB::table('vhn_menu')->where('id',$request->id)->first();
+            $item = DB::table('vhn_banners')->where('id',$request->id)->first();
             $stt = ($item->stt == 1) ? 0 : 1;
-            DB::table('vhn_menu')->where('id',$request->id)->update(['stt'=>$stt]);
+            DB::table('vhn_banners')->where('id',$request->id)->update(['stt'=>$stt]);
             return response()->json('success');
 
         } catch (\Throwable $th) {
@@ -67,7 +63,7 @@ class BannerController extends Controller
     public function destroy(Request $request)
     {
         try {
-            DB::table('vhn_menu')->where('id', $request->id)->delete();
+            DB::table('vhn_banners')->where('id', $request->id)->delete();
             return response()->json('success');
         } catch (\Throwable $th) {
             return response()->json('error');

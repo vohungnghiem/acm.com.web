@@ -31,8 +31,7 @@
                                         @foreach ($banner as $key => $item)
                                             <tr>
                                                 <td>{{++$key}}</td>
-
-                                                <td>{{$item->image}}</td>
+                                                <td><img data-toggle="tooltip" title="<img src='{{$item->image}}'/>" src="{{$item->image}}" data-html="true" alt="banner" style="height: 20px"></td>
                                                 <td>
                                                     @if ($item->stt == 1)
                                                         <div class="btn btn-xs btn-success btn-status" data-id={{$item->id}} data-toggle="tooltip" title="@lang('admin.update_status')">
@@ -45,7 +44,7 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <a href="admincp/menus/edit/{{$item->id}}" class="btn btn-xs btn-primary" data-toggle="tooltip" title="@lang('admin.update_info')">
+                                                    <a href="admincp/banners/edit/{{$item->id}}" class="btn btn-xs btn-primary" data-toggle="tooltip" title="@lang('admin.update_info')">
                                                         <i class="fas fa-pen-nib"></i>
                                                     </a>
                                                     <div class="btn btn-xs btn-danger btn-destroy" data-id="{{$item->id}}" data-toggle="tooltip" title="@lang('admin.delete_info')"  >

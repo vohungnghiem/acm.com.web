@@ -10,6 +10,7 @@ Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controller
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => 'auth'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
+// storage link image
 Route::get('/linkstorage', function () {
     Artisan::call('storage:link'); // thay php artisan storage:link
 });

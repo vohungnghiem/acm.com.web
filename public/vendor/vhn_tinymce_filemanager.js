@@ -37,4 +37,4 @@ var editor_config = {
 tinymce.init(editor_config);
 
 // alone button
-$('#lfm').filemanager('image');
+$('.lfm').filemanager('image');
