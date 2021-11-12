@@ -39,7 +39,20 @@
                                             </div>
                                         </div> --}}
                                         <div class="form-group">
-                                            <textarea id="timymce" name="tinymce" rows="30"></textarea>
+                                            <textarea class="timymce" name="tinymce" rows="10"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                  <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                                                    <i class="fa fa-picture-o"></i> Choose
+                                                  </a>
+                                                </span>
+                                                <input id="thumbnail" class="form-control" type="text" name="filepath">
+                                              </div>
+                                                <div  id="holder">
+                                                    {{-- <img src="/storage/photos/2/FILE GHEP_000.jpg" style="height: 5rem;"> --}}
+                                                </div>
                                         </div>
                                         <div class="form-group">
                                             <label> {{__('admin.status')}}</label>
@@ -66,34 +79,11 @@
 </style>
 @endpush
 @push('scripts')
-<script src="tinymce/tinymce.min.js"></script>
-<script>
-    tinymce.baseURL = "tinymce";
-    tinymce.init({
-        selector: "textarea#timymce",
-        plugins: [
-        "image",
-    ],
-    toolbar: "insertfile undo redo | styleselect | bold italic | lignleft aligncenter alignright alignjustify | bullist numlist outdent indent | image",
-        file_picker_callback: function (callback, value, meta) {
-        let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
-        let y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
+<script src="vendor/tinymce/tinymce.min.js"></script>
+<script src="vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+<script src="vendor/vhn_tinymce_filemanager.js"></script>
 
-        let type = 'image' === meta.filetype ? 'Images' : 'Files',
-            url  = '/laravel-filemanager?editor=tinymce5&type=' + type;
 
-        tinymce.activeEditor.windowManager.openUrl({
-            url : url,
-            title : 'Filemanager',
-            width : x * 0.9,
-            height : y * 1,
-            onMessage: (api, message) => {
-                callback(message.content);
-            }
-        });
-    }
-    });
-</script>
 <script src="admin_template/plugins/inputmask/jquery.inputmask.js"></script>
 <script>
     $('.datemask').inputmask('dd-mm-yyyy', { 'placeholder': 'dd-mm-yyyy' });

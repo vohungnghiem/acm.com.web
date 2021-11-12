@@ -6,10 +6,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <base href="{{asset('')}}">
     <title>@yield('title')</title>
-    <!-- Flag icon -->
-    <link rel="stylesheet" href="flag-icon/css/flag-icon.css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="admin_template/plugins/fontawesome-free/css/all.min.css">
+    <!-- Flag icon -->
+    <link rel="stylesheet" href="vendor/flag-icon/css/flag-icon.css">
+    <!-- template -->
     <link rel="stylesheet" href="admin_template/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="admin_template/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <link rel="stylesheet" href="admin_template/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
@@ -31,7 +33,7 @@
     <!-- /.content-wrapper -->
     <footer class="main-footer">
         <div class="float-right d-none d-sm-block">
-        <b>Version</b> 1 {{App::getLocale()}}
+        <b>Version</b> 1
         </div>
         <strong>Copyright &copy; 2020 - {{date('Y')}} <a href="/">{{parse_url(Request::root())['host']}}</a>.</strong> All rights reserved.
     </footer>
