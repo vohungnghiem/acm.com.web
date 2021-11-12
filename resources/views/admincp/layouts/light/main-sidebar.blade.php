@@ -80,7 +80,12 @@
                         <p>Banner</p>
                     </a>
                 </li>
-
+                <li class="nav-item">
+                    <a href="admincp/gioithieus" class="nav-link">
+                        <i class="nav-icon fas fa-user-shield"></i>
+                        <p>Giới thiệu</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

@@ -51,6 +51,16 @@ Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin'
         Route::post('remove_img','BannerController@remove_img');
         Route::post('destroy', 'BannerController@destroy');
     });
+    Route::group(['prefix' => 'gioithieus'],function(){
+        Route::get('/','GioiThieuController@index');
+        Route::get('create','GioiThieuController@create');
+        Route::post('store', 'GioiThieuController@store');
+        Route::get('edit/{id}', 'GioiThieuController@edit');
+        Route::post('{id}/update', 'GioiThieuController@update');
+        Route::post('status','GioiThieuController@status');
+        Route::post('remove_img','GioiThieuController@remove_img');
+        Route::post('destroy', 'GioiThieuController@destroy');
+    });
 });
 // database
 Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin','prefix' => 'admincp'], function() {

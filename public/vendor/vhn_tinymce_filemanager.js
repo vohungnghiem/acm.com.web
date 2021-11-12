@@ -1,6 +1,6 @@
 var editor_config = {
     path_absolute: "/",
-    selector: 'textarea.timymce',
+    selector: 'textarea.tinymce',
     relative_urls: false,
     plugins: [
         "advlist autolink lists link image charmap print preview hr anchor pagebreak",
