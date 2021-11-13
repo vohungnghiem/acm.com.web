@@ -14,3 +14,8 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => 'auth'], functi
 Route::get('/linkstorage', function () {
     Artisan::call('storage:link'); // thay php artisan storage:link
 });
+// clear cache
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    return "Cache is cleared";
+});
