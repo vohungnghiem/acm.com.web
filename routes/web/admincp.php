@@ -111,6 +111,16 @@ Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin'
         Route::post('remove_img','HinhAnhController@remove_img');
         Route::post('destroy', 'HinhAnhController@destroy');
     });
+    Route::group(['prefix' => 'lienhes'],function(){
+        Route::get('/','LienHeController@index');
+        Route::get('create','LienHeController@create');
+        Route::post('store', 'LienHeController@store');
+        Route::get('edit/{id}', 'LienHeController@edit');
+        Route::post('{id}/update', 'LienHeController@update');
+        Route::post('status','LienHeController@status');
+        Route::post('remove_img','LienHeController@remove_img');
+        Route::post('destroy', 'LienHeController@destroy');
+    });
 });
 // database
 Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin','prefix' => 'admincp'], function() {

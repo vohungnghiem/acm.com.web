@@ -116,6 +116,12 @@
                         <p>Hình ảnh</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="admincp/lienhes" class="nav-link">
+                        <i class="nav-icon fas fa-user-shield"></i>
+                        <p>Liên hệ</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
