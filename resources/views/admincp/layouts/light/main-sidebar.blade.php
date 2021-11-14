@@ -86,6 +86,12 @@
                         <p>Giới thiệu</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="admincp/muctieus" class="nav-link">
+                        <i class="nav-icon fas fa-user-shield"></i>
+                        <p>Mục tiêu</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

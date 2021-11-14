@@ -11,22 +11,11 @@ function datevnfull($date)
 {
     return date('d',strtotime($date)). ' tháng '. date('m',strtotime($date)). ' năm ' .	date('Y',strtotime($date));
 }
-function baohanh($item) 
-{
-    $date1= date_create($item->date_import);
-    $date2= date_create(date('d-m-Y'));
-    $diff = date_diff($date1,$date2)->format("%y") * 12 + date_diff($date1,$date2)->format("%m");
-    $bh = ($item->warranty - $diff < 0) ? 0 : $item->warranty - $diff;
-    return '(BH: '. $bh .'th)';
+function mysubstr($str,$limit=100){
+    if(strlen($str)<=$limit) return $str;
+    return mb_substr($str,0,$limit-3,'UTF-8').'...';
 }
-function is_invalid($date)
-{
-    if ($date == '1970-01-01' || $date == null) {
-        return 'is-invalid';
-    }else{
-        return '';
-    }
-}
+
 
 function storage_link($thumb,$date) {
     return $thumb."/".date_img($date)."/";

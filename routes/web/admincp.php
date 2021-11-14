@@ -61,6 +61,16 @@ Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin'
         Route::post('remove_img','GioiThieuController@remove_img');
         Route::post('destroy', 'GioiThieuController@destroy');
     });
+    Route::group(['prefix' => 'muctieus'],function(){
+        Route::get('/','MucTieuController@index');
+        Route::get('create','MucTieuController@create');
+        Route::post('store', 'MucTieuController@store');
+        Route::get('edit/{id}', 'MucTieuController@edit');
+        Route::post('{id}/update', 'MucTieuController@update');
+        Route::post('status','MucTieuController@status');
+        Route::post('remove_img','MucTieuController@remove_img');
+        Route::post('destroy', 'MucTieuController@destroy');
+    });
 });
 // database
 Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin','prefix' => 'admincp'], function() {
