@@ -128,6 +128,12 @@
                         <p>Địa chỉ</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="admincp/mxhs" class="nav-link">
+                        <i class="nav-icon fas fa-user-shield"></i>
+                        <p>Liên kết MXH</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

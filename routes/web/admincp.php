@@ -131,6 +131,16 @@ Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin'
         Route::post('remove_img','DiaChiController@remove_img');
         Route::post('destroy', 'DiaChiController@destroy');
     });
+    Route::group(['prefix' => 'mxhs'],function(){
+        Route::get('/','MXHController@index');
+        Route::get('create','MXHController@create');
+        Route::post('store', 'MXHController@store');
+        Route::get('edit/{id}', 'MXHController@edit');
+        Route::post('{id}/update', 'MXHController@update');
+        Route::post('status','MXHController@status');
+        Route::post('remove_img','MXHController@remove_img');
+        Route::post('destroy', 'MXHController@destroy');
+    });
 });
 // database
 Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin','prefix' => 'admincp'], function() {
