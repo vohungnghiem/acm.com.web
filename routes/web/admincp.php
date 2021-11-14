@@ -91,6 +91,16 @@ Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin'
         Route::post('remove_img','CamNhanController@remove_img');
         Route::post('destroy', 'CamNhanController@destroy');
     });
+    Route::group(['prefix' => 'tintucs'],function(){
+        Route::get('/','TinTucController@index');
+        Route::get('create','TinTucController@create');
+        Route::post('store', 'TinTucController@store');
+        Route::get('edit/{id}', 'TinTucController@edit');
+        Route::post('{id}/update', 'TinTucController@update');
+        Route::post('status','TinTucController@status');
+        Route::post('remove_img','TinTucController@remove_img');
+        Route::post('destroy', 'TinTucController@destroy');
+    });
 });
 // database
 Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin','prefix' => 'admincp'], function() {
