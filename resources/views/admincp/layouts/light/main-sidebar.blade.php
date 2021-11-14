@@ -110,6 +110,12 @@
                         <p>Tin tức</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="admincp/hinhanhs" class="nav-link">
+                        <i class="nav-icon fas fa-user-shield"></i>
+                        <p>Hình ảnh</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

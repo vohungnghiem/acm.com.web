@@ -101,6 +101,16 @@ Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin'
         Route::post('remove_img','TinTucController@remove_img');
         Route::post('destroy', 'TinTucController@destroy');
     });
+    Route::group(['prefix' => 'hinhanhs'],function(){
+        Route::get('/','HinhAnhController@index');
+        Route::get('create','HinhAnhController@create');
+        Route::post('store', 'HinhAnhController@store');
+        Route::get('edit/{id}', 'HinhAnhController@edit');
+        Route::post('{id}/update', 'HinhAnhController@update');
+        Route::post('status','HinhAnhController@status');
+        Route::post('remove_img','HinhAnhController@remove_img');
+        Route::post('destroy', 'HinhAnhController@destroy');
+    });
 });
 // database
 Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin','prefix' => 'admincp'], function() {
