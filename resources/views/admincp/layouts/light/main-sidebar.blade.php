@@ -122,6 +122,12 @@
                         <p>Liên hệ</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="admincp/diachis" class="nav-link">
+                        <i class="nav-icon fas fa-user-shield"></i>
+                        <p>Địa chỉ</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

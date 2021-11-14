@@ -113,13 +113,23 @@ Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin'
     });
     Route::group(['prefix' => 'lienhes'],function(){
         Route::get('/','LienHeController@index');
-        Route::get('create','LienHeController@create');
-        Route::post('store', 'LienHeController@store');
-        Route::get('edit/{id}', 'LienHeController@edit');
-        Route::post('{id}/update', 'LienHeController@update');
+        // Route::get('create','LienHeController@create');
+        // Route::post('store', 'LienHeController@store');
+        // Route::get('edit/{id}', 'LienHeController@edit');
+        // Route::post('{id}/update', 'LienHeController@update');
         Route::post('status','LienHeController@status');
         Route::post('remove_img','LienHeController@remove_img');
         Route::post('destroy', 'LienHeController@destroy');
+    });
+    Route::group(['prefix' => 'diachis'],function(){
+        Route::get('/','DiaChiController@index');
+        Route::get('create','DiaChiController@create');
+        Route::post('store', 'DiaChiController@store');
+        Route::get('edit/{id}', 'DiaChiController@edit');
+        Route::post('{id}/update', 'DiaChiController@update');
+        Route::post('status','DiaChiController@status');
+        Route::post('remove_img','DiaChiController@remove_img');
+        Route::post('destroy', 'DiaChiController@destroy');
     });
 });
 // database
