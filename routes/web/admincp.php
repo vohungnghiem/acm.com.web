@@ -71,6 +71,16 @@ Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin'
         Route::post('remove_img','MucTieuController@remove_img');
         Route::post('destroy', 'MucTieuController@destroy');
     });
+    Route::group(['prefix' => 'hosos'],function(){
+        Route::get('/','HoSoController@index');
+        Route::get('create','HoSoController@create');
+        Route::post('store', 'HoSoController@store');
+        Route::get('edit/{id}', 'HoSoController@edit');
+        Route::post('{id}/update', 'HoSoController@update');
+        Route::post('status','HoSoController@status');
+        Route::post('remove_img','HoSoController@remove_img');
+        Route::post('destroy', 'HoSoController@destroy');
+    });
 });
 // database
 Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin','prefix' => 'admincp'], function() {

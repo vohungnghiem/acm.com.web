@@ -92,6 +92,12 @@
                         <p>Mục tiêu</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="admincp/hosos" class="nav-link">
+                        <i class="nav-icon fas fa-user-shield"></i>
+                        <p>Hồ sơ</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
