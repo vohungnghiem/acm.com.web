@@ -98,6 +98,12 @@
                         <p>Hồ sơ</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="admincp/camnhans" class="nav-link">
+                        <i class="nav-icon fas fa-user-shield"></i>
+                        <p>Cảm nhận</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

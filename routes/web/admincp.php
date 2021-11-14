@@ -81,6 +81,16 @@ Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin'
         Route::post('remove_img','HoSoController@remove_img');
         Route::post('destroy', 'HoSoController@destroy');
     });
+    Route::group(['prefix' => 'camnhans'],function(){
+        Route::get('/','CamNhanController@index');
+        Route::get('create','CamNhanController@create');
+        Route::post('store', 'CamNhanController@store');
+        Route::get('edit/{id}', 'CamNhanController@edit');
+        Route::post('{id}/update', 'CamNhanController@update');
+        Route::post('status','CamNhanController@status');
+        Route::post('remove_img','CamNhanController@remove_img');
+        Route::post('destroy', 'CamNhanController@destroy');
+    });
 });
 // database
 Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin','prefix' => 'admincp'], function() {
