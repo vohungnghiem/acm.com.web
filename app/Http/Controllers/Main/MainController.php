@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Main;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\App;
 class MainController extends Controller
 {
     public function home() {
@@ -18,7 +19,11 @@ class MainController extends Controller
         $tintucorther = DB::table('vhn_tintucs')->where([['stt', '=', '1'],['id_loaitintuc','=','1']])->skip(6)->take(6)->orderBy('id','desc')->get();
         $truonghoc = DB::table('vhn_truonghoc')->where('stt', '=', '1')->orderBy('id','desc')->get();
         $hinhanh = DB::table('vhn_hinhanhs')->where('stt','=','1')->orderBy('id','desc')->get();
-        return view('main.home',compact('banner','gioithieuhome','gioithieuhomefirst','muctieu','hosocanchuanbi','camnhanhocvien','tintuc','tintucorther','truonghoc','hinhanh'));
+        if (App::getLocale() == 'jp') {
+            return redirect('gioithieu');
+        }else{
+            return view('main.home',compact('banner','gioithieuhome','gioithieuhomefirst','muctieu','hosocanchuanbi','camnhanhocvien','tintuc','tintucorther','truonghoc','hinhanh'));
+        }
     }
     public function gioithieu() {
         return view('main.gioithieu');
@@ -27,15 +32,6 @@ class MainController extends Controller
         return view('main.giayphep');
     }
     public function storeLienHe(Request $request){
-        // $item = new Lienhe;
-        // $item->hovaten=$request->hovaten;
-        // $item->email=$request->email;
-        // $item->tieude=$request->tieude;
-        // $item->sodienthoai=$request->sodienthoai;
-        // $item->noidung=$request->noidung;
-        // $item->created_at=$request->created_at;
-        // $item->tinhtrang=0;
-        // $item->save();
         DB::table('vhn_lienhes')->insert(
             [
                 'hovaten' => $request->hovaten,

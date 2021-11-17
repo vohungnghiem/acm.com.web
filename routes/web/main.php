@@ -12,13 +12,3 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function() {
     Route::get('tintuc','TinTucController@tintuc');
     Route::get('tintuc/{slug}','TinTucController@detail');
 });
-
-// Route::get('lienhe','LienHeController@index');
-
-// //lienhe
-// Route::post('/store', 'HomeController@store');
-
-// //hinhanh
-// Route::get('hinhanh','HinhAnhController@index');
-// Route::get('hinhanh/{id}','HinhAnhController@getidhinhanh');
-

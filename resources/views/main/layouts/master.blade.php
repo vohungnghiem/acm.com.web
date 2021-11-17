@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="main_template/img/logo.png?v=2" type="image/*" />
     <link rel="stylesheet" href="main_template/css/global.min.css">
     <link rel="stylesheet" href="main_template/css/main.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
@@ -20,6 +21,7 @@ esuhai, kaizen, trường nhật ngữ, truongnhatngu, trường tiếng, truong
 
     <meta name="description"
         content="Thương hiệu hàng đầu trong lĩnh vực việc làm tiếng Nhật, công ty Nhật Bản tuyển dụng, xuất khẩu lao động Nhật Bản, đào tạo học tiếng Nhật, tư vấn du học Nhật Bản." />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
