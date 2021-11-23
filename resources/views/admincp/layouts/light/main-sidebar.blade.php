@@ -70,73 +70,71 @@
                 @endif
                 <li class="nav-item">
                     <a href="admincp/menus" class="nav-link">
-                        <i class="nav-icon fas fa-user-shield"></i>
+                        <i class="nav-icon fas fa-ellipsis-h"></i>
                         <p>Menu</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="admincp/banners" class="nav-link">
-                        <i class="nav-icon fas fa-user-shield"></i>
+                        <i class="nav-icon fas fa-ellipsis-h"></i>
                         <p>Banner</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="admincp/gioithieus" class="nav-link">
-                        <i class="nav-icon fas fa-user-shield"></i>
+                        <i class="nav-icon fas fa-ellipsis-h"></i>
                         <p>Giới thiệu</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="admincp/muctieus" class="nav-link">
-                        <i class="nav-icon fas fa-user-shield"></i>
+                        <i class="nav-icon fas fa-ellipsis-h"></i>
                         <p>Mục tiêu</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="admincp/hosos" class="nav-link">
-                        <i class="nav-icon fas fa-user-shield"></i>
+                        <i class="nav-icon fas fa-ellipsis-h"></i>
                         <p>Hồ sơ</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="admincp/camnhans" class="nav-link">
-                        <i class="nav-icon fas fa-user-shield"></i>
+                        <i class="nav-icon fas fa-ellipsis-h"></i>
                         <p>Cảm nhận</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="admincp/tintucs" class="nav-link">
-                        <i class="nav-icon fas fa-user-shield"></i>
+                        <i class="nav-icon fas fa-ellipsis-h"></i>
                         <p>Tin tức</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="admincp/hinhanhs" class="nav-link">
-                        <i class="nav-icon fas fa-user-shield"></i>
+                        <i class="nav-icon fas fa-ellipsis-h"></i>
                         <p>Hình ảnh</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="admincp/lienhes" class="nav-link">
-                        <i class="nav-icon fas fa-user-shield"></i>
+                        <i class="nav-icon fas fa-ellipsis-h"></i>
                         <p>Liên hệ</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="admincp/diachis" class="nav-link">
-                        <i class="nav-icon fas fa-user-shield"></i>
+                        <i class="nav-icon fas fa-ellipsis-h"></i>
                         <p>Địa chỉ</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="admincp/mxhs" class="nav-link">
-                        <i class="nav-icon fas fa-user-shield"></i>
+                        <i class="nav-icon fas fa-ellipsis-h"></i>
                         <p>Liên kết MXH</p>
                     </a>
                 </li>
             </ul>
         </nav>
-        <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
 </aside>
