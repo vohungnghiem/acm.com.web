@@ -338,3 +338,30 @@
 #22 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #23 {main}
 "} 
+[2022-03-01 06:25:12] local.ERROR: file_put_contents(C:\xampp\htdocs\acm.com.web\storage\framework/cache/data/31/c2/31c20e73fa29248cc7bf440ac9d720ff6d88fd3e): failed to open stream: Permission denied {"exception":"[object] (ErrorException(code: 0): file_put_contents(C:\\xampp\\htdocs\\acm.com.web\\storage\\framework/cache/data/31/c2/31c20e73fa29248cc7bf440ac9d720ff6d88fd3e): failed to open stream: Permission denied at C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php:187)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'file_put_conten...', 'C:\\\\xampp\\\\htdocs...', 187, Array)
+#1 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(187): file_put_contents('C:\\\\xampp\\\\htdocs...', '9999999999O:29:...', 2)
+#2 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Cache\\FileStore.php(77): Illuminate\\Filesystem\\Filesystem->put('C:\\\\xampp\\\\htdocs...', '9999999999O:29:...', true)
+#3 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Cache\\FileStore.php(194): Illuminate\\Cache\\FileStore->put('translations', Object(Illuminate\\Support\\Collection), 0)
+#4 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Cache\\Repository.php(363): Illuminate\\Cache\\FileStore->forever('translations', Object(Illuminate\\Support\\Collection))
+#5 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Cache\\Repository.php(426): Illuminate\\Cache\\Repository->forever('translations', Object(Illuminate\\Support\\Collection))
+#6 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Cache\\CacheManager.php(418): Illuminate\\Cache\\Repository->rememberForever('translations', Object(Closure))
+#7 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(261): Illuminate\\Cache\\CacheManager->__call('rememberForever', Array)
+#8 C:\\xampp\\htdocs\\acm.com.web\\app\\Providers\\TranslationServiceProvider.php(27): Illuminate\\Support\\Facades\\Facade::__callStatic('rememberForever', Array)
+#9 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): App\\Providers\\TranslationServiceProvider->boot()
+#10 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#11 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#12 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#13 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#14 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(914): Illuminate\\Container\\Container->call(Array)
+#15 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(895): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\TranslationServiceProvider))
+#16 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\TranslationServiceProvider), 30)
+#17 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(896): array_walk(Array, Object(Closure))
+#18 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#19 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(237): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#20 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#21 C:\\xampp\\htdocs\\acm.com.web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#22 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 {main}
+"} 
