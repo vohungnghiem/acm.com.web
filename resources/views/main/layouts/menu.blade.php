@@ -1,54 +1,37 @@
 @php
-    $menu = DB::table('vhn_menu')->where('stt', '=', '1')->orderBy('id','asc')->get();
-    function showmenu($item) {
-        $showmenu = '';
-        if (App::getLocale() == 'vi') {
-            $showmenu = $item->ten;
-        }else{
-            $os = array(2,3,4);
-            if (!in_array($item->id, $os)) {
-                $showmenu = $item->tenjp;
-            }
+$menu = DB::table('vhn_menu')->where('stt', '=', '1')->orderBy('id','asc')->get();
+function showmenu($item) {
+    $showmenu = '';
+    if (App::getLocale() == 'vi') {
+        $showmenu = $item->ten;
+    }else{
+        $os = array(2,3,4);
+        if (!in_array($item->id, $os)) {
+            $showmenu = $item->tenjp;
         }
-        return $showmenu;
     }
+    return $showmenu;
+}
 @endphp
-<header>
-    <div class="top-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 flex-box">
-                    <div class="logo"><a href="#"><img src="main_template/img/logo.png" alt="logo"></a></div>
-                    <div class="hamburger"></div>
-                    <nav class="header-nav">
-                        <li><a class="active" href="/">@lang('main.trangchu')</a></li>
-						<li><a href="/gioithieu">@lang('main.gioithieu')</a></li>
-                        @foreach ($menu as $item)
-							<li><a href="{{$item->link}}">{{showmenu($item)}}</a></li>
-						@endforeach
-                        @foreach (Config::get('languages') as $lang => $language)
-                            @if ($language['status'] == 1)
-                                <li><a href="{{ route('lang.switch', $lang) }}"><img src="main_template/img/flag{{ $language['flag-icon'] }}.png" alt="flag{{ $language['flag-icon'] }}.png"></a></li>
-                            @endif
-                        @endforeach
-                    </nav>
-                </div>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/"> <img src="main_master/images/logo/logo.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="oi oi-menu"></span> Menu
+  </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" id="home"><a href="/" class="nav-link">@lang('main.trangchu')</a></li>
+                <li class="nav-item"><a href="gioithieu" class="nav-link">@lang('main.gioithieu')</a></li>
+                @foreach ($menu as $item)
+                    <li class="nav-item"><a href="{{$item->link}}" class="nav-link">{{showmenu($item)}}</a></li>
+                @endforeach
+
+                <li class="nav-item"><a href="lang/vi" class="nav-link"><img src="main_master/images/flag/flagvn.png" alt="flagvn.png"></a></li>
+                <li class="nav-item"><a href="lang/jp" class="nav-link"><img src="main_master/images/flag/flagjp.png" alt="flagjp.png"></a></li>
+            </ul>
         </div>
     </div>
-    <div class="nav-mobile">
-        <nav>
-            <li>
-                @foreach (Config::get('languages') as $lang => $language)
-                    @if ($language['status'] == 1)
-                        <a href="{{ route('lang.switch', $lang) }}"><img
-                                src="main_template/img/flag{{ $language['flag-icon'] }}.png" alt="flag{{ $language['flag-icon'] }}.png"></a>
-                    @endif
-                @endforeach
-            </li>
-            @foreach ($menu as $item)
-                <li><a href="{{$item->link}}">{{showmenu($item)}}</a></li>
-            @endforeach
-        </nav>
-    </div>
-</header>
+</nav>
+<!-- END nav -->

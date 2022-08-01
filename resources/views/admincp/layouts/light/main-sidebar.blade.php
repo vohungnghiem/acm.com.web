@@ -134,6 +134,12 @@
                         <p>Liên kết MXH</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="admincp/donhangs" class="nav-link">
+                        <i class="nav-icon fas fa-ellipsis-h"></i>
+                        <p>Đơn hàng</p>
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>

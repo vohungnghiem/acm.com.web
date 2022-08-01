@@ -29,7 +29,9 @@ class TinTucController extends Controller
                     'noidung' => $request->noidung,
                     'noidungjp' => $request->noidungjp,
                     'image'=> $request->image,
-                    'stt'=> $request->status == 'on' ? 1 : 0
+                    'stt'=> $request->status == 'on' ? 1 : 0,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s')
                 ]);
             return redirect('admincp/tintucs/edit/'.$id)->with('success','Success !');
         } catch (\Throwable $th) {
@@ -51,7 +53,8 @@ class TinTucController extends Controller
             DB::table('vhn_tintucs')->where('id',$id)->update(
                 [
                     'ten' => $request->ten,
-                    'slug' => $request->slug,
+                    // 'slug' => $request->slug,
+                    'slug' => Str::of($request->ten)->slug('-'),
                     'tenjp' => $request->tenjp,
                     'description' => $request->description,
                     'descriptionjp' => $request->descriptionjp,
@@ -59,7 +62,9 @@ class TinTucController extends Controller
                     'noidung' => $request->noidung,
                     'noidungjp' => $request->noidungjp,
                     'image'=> $request->image,
-                    'stt'=> $request->status == 'on' ? 1 : 0
+                    'stt'=> $request->status == 'on' ? 1 : 0,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s')
                 ]);
             return redirect('admincp/tintucs/edit/'.$id)->with('success','Success !');
         } catch (\Throwable $th) {

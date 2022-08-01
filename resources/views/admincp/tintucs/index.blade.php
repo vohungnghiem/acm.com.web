@@ -27,6 +27,7 @@
                                             <th>Tiêu đề jp</th>
                                             <th>Mô tả</th>
                                             <th>Loại tin tức</th>
+                                            <th>Ngày tạo</th>
                                             <th>Trạng thái</th>
                                             <th>Tác vụ</th>
                                         </tr>
@@ -45,6 +46,7 @@
                                                         Điều dưỡng
                                                     @endif
                                                 </td>
+                                                <td>{{$item->created_at}}</td>
                                                 <td>
                                                     @if ($item->stt == 1)
                                                         <div class="btn btn-xs btn-success btn-status" data-id={{$item->id}} data-toggle="tooltip" title="@lang('admin.update_status')">
@@ -106,7 +108,18 @@
                     { width: '20%'},
                     { width: '1%'},
                     { width: '1%'},
+                    { width: '1%'},
                 ],
+                "columnDefs": [{
+                    "searchable": true,
+                    "orderable": false,
+                }],
+                "ordering": false,
+                "fnRowCallback": function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                    var index = iDisplayIndexFull + 1;
+                    $('td:eq(0)', nRow).html(index);
+                    return nRow;
+                },
                 search: {
                     "regex": true
                 },

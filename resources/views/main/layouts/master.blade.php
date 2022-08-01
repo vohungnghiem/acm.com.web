@@ -5,10 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="main_template/img/logo.png?v=2" type="image/*" />
-    <link rel="stylesheet" href="main_template/css/global.min.css">
-    <link rel="stylesheet" href="main_template/css/main.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <link rel="icon" href="main_master/images/logo/logo.png?v=2" type="image/*" />
+    {{-- <link rel="stylesheet" href="main_template/css/global.min.css">
+    <link rel="stylesheet" href="main_template/css/main.min.css?v={{time()}}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"> --}}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="main_master/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="main_master/css/animate.css">
+
+    <link rel="stylesheet" href="main_master/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="main_master/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="main_master/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="main_master/css/aos.css">
+
+    <link rel="stylesheet" href="main_master/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="main_master/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="main_master/css/jquery.timepicker.css">
+
+
+    {{-- <link rel="stylesheet" href="main_master/css/flaticon.css">
+    <link rel="stylesheet" href="main_master/css/icomoon.css"> --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="main_master/css/style.css?v={{time()}}">
+    <link rel="stylesheet" href="main_master/css/zstyle.css?v={{time()}}">
+
     <title>@yield('title')</title>
     <meta name="keywords"
         content="Việc làm tiếng Nhật, vieclamtiengnhat, việc làm tiếng nhật, thực tập sinh, thuctapsinh, tu nghiệp sinh, tunghiepsinh, xuất khẩu lao động, xuatkhaulaodong,

@@ -1,100 +1,220 @@
-@php
+ @php
     $dclienhe = DB::table('vhn_dclienhes')->where('stt','=','1')->orderBy('id','desc')->get();
-    $tintuc = DB::table('vhn_tintucs')->where([['stt', '=', '1'],['id_loaitintuc','=','2']])->take(6)->orderBy('id','desc')->get();
+    $tintuc = DB::table('vhn_tintucs')->where([['stt', '=', '1'],['id_loaitintuc','=','2']])->take(2)->orderBy('id','desc')->get();
     $mxh = DB::table('vhn_mxhs')->where('stt','=','1')->orderBy('id','desc')->get();
     $menu = DB::table('vhn_menu')->where('stt', '=', '1')->orderBy('id','asc')->get();
 @endphp
-<section class="back-2-top">
-	<div class="btn-back-2-top"></div>
+
+<section class="ftco-section-parallax">
+    <div class="parallax-img d-flex align-items-center">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-7 text-center heading-section heading-section-white ftco-animate lienhe">
+                    <h2>LIÊN HỆ VỚI CHÚNG TÔI</h2>
+                    @foreach ($dclienhe as $item)
+                        <p class="btn contact-bi"><i class="bi bi-telephone"></i> {{$item->dienthoai}}</p>
+					    <p class="btn contact-bi"><i class="bi bi-envelope"></i> {{$item->email}}</p>
+                    @endforeach
+                    <div class="row d-flex justify-content-center mt-5">
+                        <div class="col-md-8">
+                            <form method="post"  action="storeLienHe" class="subscribe-form">
+                                {{ csrf_field() }}
+                                <div class="form-group mb-1">
+                                    <input type="text" class="form-control" name="hovaten" placeholder="@lang('main.home-lienhe-title2')" value="{{ old('hovaten') }}" required>
+                                </div>
+                                <div class="form-group mb-1">
+                                    <input type="text" class="form-control" name="email" placeholder="Nhập email"  value="{{ old('email') }}" >
+                                </div>
+                                <div class="form-group mb-1">
+                                    <input type="text" class="form-control" name="sodienthoai" placeholder="@lang('main.home-lienhe-title4')"  value="{{ old('sodienthoai') }}">
+                                </div>
+                                <div class="form-group mb-1">
+                                    <input type="text" class="form-control" name="tieude" placeholder="@lang('main.home-lienhe-title3')"  value="{{ old('tieude') }}" >
+                                </div>
+                                <div class="form-group mb-1">
+                                    <input type="text" class="form-control" name="noidung" placeholder="@lang('main.home-lienhe-title5')"  value="{{ old('noidung') }}">
+                                </div>
+                                <div class="text-center mb-1">
+                                    <input type="submit" class="btn btn-secondary" value="@lang('main.home-lienhe-title6')">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-<footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3 col-lg-2">
-				<div class="item"><img class="logo-footer" src="main_template/img/logo-footer.png" alt="logo-footer">
-					<h3 class="footer-title">@lang('main.footer-title1')</h3>
-					<div class="social">
-						@foreach ($mxh as $item)
-                            <a class="mdi mdi-{{$item->icon}}" href="{{$item->link}}" target="_blank"></a>
+<div id="applyNow"  class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Liên hệ với chúng tôi</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <form method="post"  action="storeLienHe">
+                    {{ csrf_field() }}
+                    <div class="text-center mb-1">
+                        <input type="text" class="form-control mb-1" name="hovaten" placeholder="@lang('main.home-lienhe-title2')" value="{{ old('hovaten') }}" required>
+                        <input type="text" class="form-control mb-1" name="email" placeholder="Nhập email"  value="{{ old('email') }}" >
+                        <input type="text" class="form-control mb-1" name="sodienthoai" placeholder="@lang('main.home-lienhe-title4')"  value="{{ old('sodienthoai') }}">
+                        <input type="text" class="form-control mb-1" name="tieude" placeholder="@lang('main.home-lienhe-title3')"  value="{{ old('tieude') }}" >
+                        <input type="text" class="form-control mb-1" name="noidung" placeholder="@lang('main.home-lienhe-title5')"  value="{{ old('noidung') }}">
+                        <input type="submit" class="btn btn-secondary" value="@lang('main.home-lienhe-title6')">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<footer class="ftco-footer ftco-bg-dark ftco-section img" style="background-image: url('main_master/images/banner.jpg'); background-attachment:fixed;">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-3">
+                <div class="ftco-footer-widget mb-4">
+                    <h2>
+                        <a class="navbar-brand" href="/"><img src="main_master/images/logo/logo-footer.png" alt=""></a>
+                        <p>CÔNG TY TNHH NHÂN LỰC ACM</p>
+                    </h2>
+
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-2">
+                        @foreach ($mxh as $item)
+                            <li class="ftco-animate"><a href="{{$item->link}}" target="_blank"><span class="bi bi-{{$item->icon}}" ></span></a></li>
 						@endforeach
-					</div>
-				</div>
-			</div>
-			<div class="col-md-9 col-lg-7">
-				<h3 class="footer-title flex-space-around">
-					<a href="/">@lang('main.trangchu')</a>
-					@foreach ($menu as $item)
-						<a href="{{$item->link}}">
-							@php
-								if (App::getLocale() == 'vi') {
-									echo($item->ten);
-								}else{
-									echo($item->tenjp);
-								}
-							@endphp
-						</a>
+                    </ul>
+                    <div class="block-23 mb-3">
+                        <ul>
+                            @foreach ($dclienhe as $item)
+                                <li>
+                                    <p>
+                                        <i class="bi bi-building"></i>
+                                        @php
+                                            if (App::getLocale() == 'vi') {
+                                                echo($item->diachi);
+                                            }else{
+                                                echo($item->diachijp);
+                                            }
+                                        @endphp
+                                    </p>
+                                    <p><i class="bi bi-telephone"></i> {{$item->dienthoai}}</p>
+                                    <p><i class="bi bi-envelope"></i> {{$item->email}}</p>
+                                    <p><i class="bi bi-envelope-paper-fill"></i> {{$item->fax}}</p>
+                                    <p><i class="bi bi-globe"></i> {{$item->website}}</p>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Tin tức gần đây</h2>
+
+                    @foreach ($tintuc as $item)
+                        <div class="block-21 mb-4 d-flex">
+                            <div class="text">
+                                <h6><a href="tintuc/{{$item->slug}}"><i class="bi bi-chevron-compact-right"></i> {{$item->ten}}</a></h6>
+                                <div class="meta">
+                                    <div><a href="tintuc/{{$item->slug}}"><span class="icon-calendar"></span> {!! date('d/m/Y',strtotime($item->created_at)) !!}</a></div>
+                                </div>
+                            </div>
+                        </div>
 					@endforeach
-				</h3>
-				<nav class="footer-nav">
-					@foreach ($tintuc as $item)
-						<li><a href="tintuc/{{$item->slug}}">
-							@php
-								if (App::getLocale() == 'vi') {
-									echo($item->ten);
-								}else{
-									echo($item->tenjp);
-								}
-							@endphp
-						</a></li>
-					@endforeach
-				</nav>
-				<nav class="footer-nav">
-					@foreach ($dclienhe as $item)
-						<li>
-							<h3 class="footer-title">
-								@php
-									if (App::getLocale() == 'vi') {
-										echo($item->ten);
-									}else{
-										echo($item->tenjp);
-									}
-								@endphp
-							</h3>
-							<p>
-								@php
-									if (App::getLocale() == 'vi') {
-										echo($item->diachi);
-									}else{
-										echo($item->diachijp);
-									}
-								@endphp
-							</p>
-							<p>{{$item->dienthoai}}</p>
-							<p>{{$item->email}}</p>
-							<p>{{$item->fax}}</p>
-							<p>{{$item->website}}</p>
-						</li>
-					@endforeach
-				</nav>
-			</div>
-			<div class="col-lg-3">
-				<div class="footer-certifications">
-					<div class="item"><a href="giayphep"><img src="main_template/img/icon-footer.png" alt="icon-footer"></a>
-						<p style="font-weight: 700; color: #1D1D1B; text-transform: uppercase">1132/lđtnxh-gp</p>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="ftco-footer-widget mb-4 ml-md-4">
+                    <h2 class="ftco-heading-2">DANH MỤC</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="/" class="py-2 d-block"><i class="bi bi-caret-right"></i> @lang('main.trangchu')</a></li>
+                        @foreach ($menu as $item)
+                        <li>
+                            <a href="{{$item->link}}" class="py-2 d-block"> <i class="bi bi-caret-right"></i>
+                                @php
+                                    if (App::getLocale() == 'vi') {
+                                        echo($item->ten);
+                                    }else{
+                                        echo($item->tenjp);
+                                    }
+                                @endphp
+                            </a>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="ftco-footer-widget mb-4">
+                    <div class="giayphep">
+                        <a href="giayphep"><img src="main_master/images/logo/icon-footer.png" alt="icon-footer"></a>
+						<p style="text-transform: uppercase;">1132/lđtnxh-gp</p>
 						<p>@lang('main.footer-title2')</p>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="copyright">Copyright © 2020 ACM Co., Ltd. All rights reserved.</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+
+                <p>
+                    Copyright © 2020 ACM Co., Ltd. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
 </footer>
-<script src="main_template/js/global.min.js"></script>
-<script src="main_template/js/main.min.js"></script>
-{{-- datatable --}}
-<script type="text/javascript" charset="utf8" src="main_template/js/jquery.dataTables.js"></script>
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+<script src="main_master/js/jquery.min.js"></script>
+<script src="main_master/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="main_master/js/popper.min.js"></script>
+<script src="main_master/js/bootstrap.min.js"></script>
+<script src="main_master/js/jquery.easing.1.3.js"></script>
+<script src="main_master/js/jquery.waypoints.min.js"></script>
+<script src="main_master/js/jquery.stellar.min.js"></script>
+<script src="main_master/js/owl.carousel.min.js"></script>
+<script src="main_master/js/jquery.magnific-popup.min.js"></script>
+<script src="main_master/js/aos.js"></script>
+<script src="main_master/js/jquery.animateNumber.min.js"></script>
+<script src="main_master/js/bootstrap-datepicker.js"></script>
+<script src="main_master/js/jquery.timepicker.min.js"></script>
+<script src="main_master/js/scrollax.min.js"></script>
+{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> --}}
+{{-- <script src="main_master/js/google-map.js"></script> --}}
+<script src="main_master/js/main.js?v={{time()}}"></script>
 <script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-    } );
+    $('.testimony-wrap').on('click','.text',function (e) {
+        $('.testimony-wrap .text').css({"height": "auto"});
+        $('.testimony-wrap .text').addClass('text-wrap');
+    });
+    $('.testimony-wrap').on('click','.text-wrap',function (e) {
+        $('.testimony-wrap .text').css({"height": "200px"});
+        $('.testimony-wrap .text').removeClass('text-wrap');
+    });
+    var url = window.location + "";
+    var path = url.replace(window.location.protocol + "//" + window.location.host + "/", "");
+    path = path.replace('public/', '');
+    var index = path.indexOf("?");
+    if (index >= 0) {
+        var res = path.slice(0, index).split("/");
+    } else {
+        var res = path.split("/");
+    }
+    if (res[0] == "") {
+        $('#home').addClass('active');
+    }
+    $(".navbar-nav .nav-item .nav-link").each(function() {
+        if ((res[0]) == $(this).attr('href')) {
+            $(this).parents('.nav-item').addClass('active');
+        }
+    });
 </script>
+</body>
+
+</html>
+

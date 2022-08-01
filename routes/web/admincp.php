@@ -141,6 +141,15 @@ Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin'
         Route::post('remove_img','MXHController@remove_img');
         Route::post('destroy', 'MXHController@destroy');
     });
+    Route::group(['prefix' => 'donhangs'],function(){
+        Route::get('/','DonHangController@index');
+        Route::get('create','DonHangController@create');
+        Route::post('store', 'DonHangController@store');
+        Route::get('edit/{id}', 'DonHangController@edit');
+        Route::post('{id}/update', 'DonHangController@update');
+        Route::post('status','DonHangController@status');
+        Route::post('destroy', 'DonHangController@destroy');
+    });
 });
 // database
 Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin','prefix' => 'admincp'], function() {

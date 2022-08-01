@@ -33,7 +33,7 @@ return [
 
     'home-camnhan-title1' => '実習生の感想',
     'home-camnhan-title2' => '出国した実習生',
-    
+
     'home-tintuc-title1' => 'ニュース',
     'home-tintuc-title2' => '教育と雇用の選択は、最も繁栄した持続可能な社会の発展のための中核的な基盤です',
 

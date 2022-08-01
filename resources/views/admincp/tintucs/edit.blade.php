@@ -43,13 +43,20 @@
                                     </div>
                                     <div class="form_group col-lg-6">
                                         <label> Nội dung TV</label>
-                                        <textarea name="noidung" class="tinymce" cols="30" rows="10">{!!$tintuc->noidung!!}</textarea>
+                                        <textarea name="noidung" class="tinymce" cols="30" rows="30">{!!$tintuc->noidung!!}</textarea>
                                     </div>
                                     <div class="form_group col-lg-6">
                                         <label> Nội dung JP</label>
-                                        <textarea name="noidungjp" class="tinymce" cols="30" rows="10">{!!$tintuc->noidungjp!!}</textarea>
+                                        <textarea name="noidungjp" class="tinymce" cols="30" rows="30">{!!$tintuc->noidungjp!!}</textarea>
                                     </div>
                                     <div class="card-body col-lg-2">
+                                        <div class="form-group">
+                                            <label> Loại tin tức</label>
+                                            <select name="id_loaitintuc" class="form-control select2bs4">
+                                                <option value="1" @if ($tintuc->id_loaitintuc == 1) selected @endif>Tin Tức</option>
+                                                <option value="2" @if ($tintuc->id_loaitintuc == 2) selected @endif>Điều dưỡng</option>
+                                            </select>
+                                        </div>
                                         <div class="form-group">
                                             <label>Hình ảnh </label>
                                             <div class="input-group">

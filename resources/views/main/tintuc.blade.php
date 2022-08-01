@@ -2,109 +2,79 @@
 @section('title', __('main.layout-tintuc-title3'))
 @section('description', __('main.layout-tintuc-title3'))
 @section('content')
-    <main>
-        <section class="page-banner"><img src="main_template/img/banner.jpg" alt="banner.jpg"></section>
-			<section class="container">
-				<nav class="breadcrumb">
-					<a class="breadcrumb__step" href="/">@lang('main.trangchu')</a>
-					<a class="breadcrumb__step breadcrumb__step--active" href="tintuc">@lang('main.layout-tintuc-title3')</a></nav>
-			</section>
-			<section class="tin-tuc tintuc-page">
-				<div class="container">
-					<div class="row" style="margin-bottom: 48px">
-						<div class="col-12">
-							<h2 class="title">@lang('main.layout-tintuc-title1')</h2>
-						</div>
-						<div class="col-lg-8">
-							<div class="swiper-container">
-								<div class="swiper-wrapper">
-									@foreach ($tintuc as $item)
-										<a class="swiper-slide" href="tintuc/{{$item->slug}}">
-											<article>
-												<div class="box-img"><img src="{{$item->image}}" alt="news-1.png"></div>
-												<h4 class="article-title">
-													@php
-														if (App::getLocale() == 'vi') {
-															echo($item->ten);
-														}else{
-															echo($item->tenjp);
-														}
-													@endphp
-												</h4>
-												<p class="posted">{{$item->created_at}}</p>
-												<div class="item-content">
-													<p>
-														@php
-															if (App::getLocale() == 'vi') {
-																echo($item->description);
-															}else{
-																echo($item->descriptionjp);
-															}
-														@endphp
-													</p>
-												</div>
-											</article>
-										</a>
-									@endforeach
-								</div>
-							</div>
-							<div class="pagination"></div>
-						</div>
-						<div class="col-lg-4">
-							<div class="tin-tuc-khac">
-								@foreach ($tintucorther as $item)
-									<div class="item">
-										<p class="posted">{{date('d-m-Y',strtotime($item->created_at))}}</p>
-										<a class="item-title" href="tintuc/{{$item->slug}}">
-											@php
-												if (App::getLocale() == 'vi') {
-													echo($item->ten);
-												}else{
-													echo($item->tenjp);
-												}
-											@endphp
-										</a>
-									</div>
-								@endforeach
+<div class="hero-wrap hero-wrap-2" style="background-image: url('main_master/images/banner.jpg'); background-attachment:fixed;">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+            <div class="col-md-8 ftco-animate text-center fadeInUp ftco-animated">
+                <p class="breadcrumbs"><span class="mr-2"><a href="/">Trang chủ</a></span> <span>TIN TỨC</span></p>
+                <h1 class="mb-3 bread">TIN TỨC</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <h2 class="mb-3">TIN TỨC NỔI BẬT</h2>
+                <div class="row d-flex">
+                    @foreach ($tintucs as $item)
+                    <div class="col-md-4 d-flex ftco-animate fadeInUp ftco-animated">
+                        <div class="blog-entry align-self-stretch">
+                            <a href="tintuc/{{ $item->slug }}">
+                                <img src="{{$item->image }}" alt="acmjinzai" style="width: 100%;">
+                            </a>
+                            <div class="text p-4 d-block">
+                                <div class="meta mb-3">
+                                    <div><a href="tintuc/{{ $item->slug }}">
+                                        <i class="bi bi-calendar"></i> {!! date('d/m/Y',strtotime($item->created_at)) !!}
+                                    </a></div>
+                                </div>
+                                <h6 class="heading mt-3"><a href="tintuc/{{ $item->slug }}" class="text-dot">{{$item->ten}}</a></h6>
+                                <p class="text-dot">{{$item->description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                <div class="mt-5">
+                    <div class="col text-center">
+                        <div class="block-27">
+                           {{$tintucs->onEachSide(1)->links('vendor/pagination/default')}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h4 class="mb-3">TIN TỨC CŨ HƠN</h4>
+                @if (count($tintucorther) > 0)
+                    @foreach ($tintucorther as $item)
+                    <div class="block-21 ttdd mb-4 d-flex">
+                        <div class="text">
+                            <h5 class="heading"><a href="tintuc/{{ $item->slug }}" class="text-dot">{{$item->ten}}</a></h5>
+                            <div class="meta">
+                                <div><a href="tintuc/{{ $item->slug }}">
+                                    <i class="bi bi-calendar"></i> {!! date('d/m/Y',strtotime($item->created_at)) !!}
+                                </a></div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                @else
+                <div class="block-21 ttdd mb-4 d-flex">
+                    <div class="text">
+                        <div class="meta">
+                            <div>chưa có tin tức cũ hơn</div>
+                        </div>
+                    </div>
+                </div>
+                @endif
 
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-12">
-							<h2 class="title">@lang('main.layout-tintuc-title2')</h2>
-						</div>
-						@foreach ($tinlienquan as $item)
-							<div class="col-md-4">
-								<article class="tintuc-item"><a href="tintuc/{{$item->slug}}">
-										<div class="box-img"><img src="{{$item->image}}" alt="{{$item->image}}"></div>
-										<h4 class="article-title">
-											@php
-												if (App::getLocale() == 'vi') {
-													echo($item->ten);
-												}else{
-													echo($item->tenjp);
-												}
-											@endphp
-										</h4>
-										<p class="posted">{{$item->created_at}}</p>
-										<div class="item-content">
-											<p>
-												@php
-													if (App::getLocale() == 'vi') {
-														echo($item->description);
-													}else{
-														echo($item->descriptionjp);
-													}
-												@endphp
-											</p>
-										</div>
-									</a>
-								</article>
-							</div>
-						@endforeach
-					</div>
-				</div>
-			</section>
-    </main>
+            </div>
+        </div>
+    </div>
+
+</div>
+</section>
 @endsection

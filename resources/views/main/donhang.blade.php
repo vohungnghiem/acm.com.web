@@ -2,45 +2,63 @@
 @section('title', __('main.home-donhang-title3'))
 @section('description', __('main.home-donhang-title3'))
 @section('content')
-<main>
-    <section class="page-banner"><img src="main_template/img/banner.jpg" alt="banner.jpg"></section>
-    <section class="don-hang">
-        <h2 class="title text-center">@lang('main.home-donhang-title1')</h2>
-        <div class="container">
-            <div class="row">
-                <div class="table-wrap">
-                    <table id="example">
-                        <thead>
-                            <tr>
-                                <th>@lang('main.home-donhang-title2')</th>
-                                <th>@lang('main.home-donhang-title3')</th>
-                                <th>@lang('main.home-donhang-title4')</th>
-                                <th>@lang('main.home-donhang-title5')</th>
-                                <th>@lang('main.home-donhang-title6')</th>
-                                <th>@lang('main.home-donhang-title7')</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($donhang as $dh)
-                                <tr>
-                                    <td><a href="donhang/{{$dh->id}}">[{{$dh->tendonhang}}] {{$dh->nganhnghe_vn}}</a></td>
-                                    <td><a href="donhang/{{$dh->id}}">{{$dh->tendonhang}}</a></td>
-                                    <td><span>{{$dh->luongcoban}}</span></td>
-                                    @if ($dh->trinhdo=='')
-                                        <td><span class="">Không</span></td>
-                                    @else
-                                        <td><span class="{{$dh->trinhdo}}">{{$dh->trinhdo}}</span></td>
-                                    @endif
-                                    <td><a href="donhang/{{$dh->id}}">{{$dh->noilamviec}}</a></td>
-                                    <td> {{$dh->ngaytuyenbd}}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
+<div class="hero-wrap hero-wrap-2" style="background-image: url('main_master/images/banner.jpg'); background-attachment:fixed;">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+            <div class="col-md-8 ftco-animate text-center fadeInUp ftco-animated">
+                <p class="breadcrumbs"><span class="mr-2"><a href="/">Trang chủ</a></span> <span>ĐƠN HÀNG</span></p>
+                <h1 class="mb-3 bread">DANH SÁCH ĐƠN HÀNG</h1>
             </div>
         </div>
-    </section>
-</main>
-
+    </div>
+</div>
+<section class="container mb-5 mt-5">
+    <h2 class="text-center mb-4">DANH SÁCH ĐƠN HÀNG</h2>
+    <div class="section-donhang">
+        <div class="donhang-info">
+            <div class="w-400">
+                TÊN ĐƠN HÀNG
+            </div>
+            <div class="w-200">
+                Mức lương
+            </div>
+            <div class="w-200">
+                Yêu cầu
+            </div>
+            <div class="w-200">
+                Nơi làm việc
+            </div>
+            <div class="w-200">
+                Ngày tuyển
+            </div>
+        </div>
+        @foreach ($donhangs as $item)
+        <div class="donhang-info">
+            <div class="w-400">
+               <a href="donhang/{{$item->id}}" class="text-dark text-dot">{{'['.$item->job.'] '.$item->ten }}</a>
+            </div>
+            <div class="w-200">
+                <span class="text-dark">{{$item->salary_receive}}</span>
+            </div>
+            <div class="w-200">
+                <span class="text-dark">{{$item->degree}}</span>
+            </div>
+            <div class="w-200">
+                <span class="text-dark">{{$item->address}}</span>
+            </div>
+            <div class="w-200">
+                <span class="text-dark">{{$item->day_start}}</span>
+            </div>
+        </div>
+        @endforeach
+    </div>
+    <div class="row mt-5">
+        <div class="col text-center">
+          <div class="block-27">
+            {{$donhangs->onEachSide(1)->links('vendor.pagination.default')}}
+          </div>
+        </div>
+      </div>
+</section>
 @endsection

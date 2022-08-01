@@ -8,7 +8,7 @@ return [
     'gioithieu' => 'Giới thiệu',
     'xemchitiet' => 'Xem chi tiết',
     'vieclammirai' => 'VIỆC LÀM MIRAI',
-    
+
     'banner-title1' => 'ĐƠN HÀNG NỔI BẬT',
     'banner-title2' => 'Nơi làm việc',
     'banner-title3' => 'Công việc',
@@ -44,7 +44,7 @@ return [
     'home-lienhe-title3' => 'Nhập tiêu đề',
     'home-lienhe-title4' => 'Số điện thoại',
     'home-lienhe-title5' => 'Nội dung',
-    'home-lienhe-title6' => 'Gửi',
+    'home-lienhe-title6' => 'Gửi liên hệ',
 
     'footer-title1' => 'CÔNG TY TNHH NHÂN LỰC ACM',
     'footer-title2' => 'Giấy phép đưa người lao động đi làm việc ở nước ngoài',

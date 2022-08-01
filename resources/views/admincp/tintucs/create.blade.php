@@ -39,11 +39,11 @@
                                     </div>
                                     <div class="form_group col-lg-6">
                                         <label> Nội dung TV</label>
-                                        <textarea name="noidung" class="tinymce" cols="30" rows="10"></textarea>
+                                        <textarea name="noidung" class="tinymce" cols="30" rows="30"></textarea>
                                     </div>
                                     <div class="form_group col-lg-6">
                                         <label> Nội dung JP</label>
-                                        <textarea name="noidungjp" class="tinymce" cols="30" rows="10"></textarea>
+                                        <textarea name="noidungjp" class="tinymce" cols="30" rows="30"></textarea>
                                     </div>
                                     <div class="card-body col-lg-2">
                                         <div class="form-group">

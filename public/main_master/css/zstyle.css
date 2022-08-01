@@ -1,0 +1,158 @@
+.contact-bi {
+    font-size: 1.3em;
+    color: #fffae8 !important;
+    background-color: #333;
+    border-radius: 30px;
+}
+.hero-wrap .overlay {
+    background: linear-gradient(to right, #08070a 0%, #3e3e23ed 100%);
+}
+.news-tintuc {
+    font-size: 40px !important;
+}
+.news-wrap-p {
+    margin-top: 3rem;
+}
+.news-wrap-p p {
+    margin-top: -1rem;
+    font-size: 16px;
+}
+.news-wrap-p span {
+    color: #4c5156;
+}
+.news-wrap-p img {
+    max-width: 100%;
+}
+
+.image-icon {
+    width: 30%;
+}
+
+.text-dot {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.testimony-wrap .text {
+    height: 200px;
+}
+
+.testimony-wrap .text::after {
+    content: ' \02C7';
+    font-size: 20px;
+    position: absolute;
+    bottom: -40px;
+    background: #b7b4ad;
+    color: white;
+    padding: 0px 15px;
+    height: 30px;
+    left: calc(50% - 10px);
+    cursor: pointer;
+}
+
+footer .giayphep {
+    text-align: center;
+    border: 1px solid #eee;
+    padding: 15px;
+}
+
+.lienhe {
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 30px;
+    background: #007bff;
+}
+
+.ftco-section-parallax .parallax-img {
+    background: #eee !important;
+}
+
+footer .giayphep p {
+    font-size: 11pt;
+    margin-bottom: 0px;
+}
+
+footer .giayphep a img {
+    width: 40px;
+    margin-bottom: 10px;
+}
+
+.disabled span {
+    color: #eee !important;
+    border: 1px solid #eee !important;
+    background-color: #ccc !important;
+}
+
+.ttdd .text {
+    width: 100% !important;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.wrap-donhang {
+    background-color: #fffae8;
+    /* border-radius: 40px; */
+}
+
+.section-donhang .donhang-info {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.section-donhang .donhang-info:nth-child(odd) {
+    background: #ccc;
+}
+
+.section-donhang .donhang-info:nth-child:nth-child(even) {
+    background-color: white;
+}
+
+.section-donhang .donhang-info:nth-child(1) {
+    background: #ffc300;
+    padding: 15px;
+}
+
+.section-donhang .donhang-info .w-400 {
+    width: 370px;
+    padding: 5px;
+    font-weight: 700;
+}
+
+
+.w-400 a:hover {
+    color: #ffc300 !important;
+}
+
+.section-donhang .donhang-info .w-200 {
+    width: 175px;
+    padding: 5px;
+}
+
+@media (max-width: 992px) {
+    .section-donhang::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+    .section-donhang::-webkit-scrollbar-button {
+        background: #ccc
+    }
+    .section-donhang::-webkit-scrollbar-track-piece {
+        background: #888
+    }
+    .section-donhang::-webkit-scrollbar-thumb {
+        background: #eee
+    }
+    .section-donhang {
+        width: 100%;
+        overflow-x: scroll;
+    }
+    .section-donhang .donhang-info {
+        width: auto;
+    }
+}
