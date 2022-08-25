@@ -16,7 +16,7 @@
 <section class="ftco-section">
     <div class="container">
         <div class="row">
-            <img src="main_template/img/giayphep.png" alt="giay-phep" style="width:100%">
+            <img src="main_master/images/giayphep/giayphep.png" alt="giay-phep" style="width:100%">
         </div>
     </div>
 </section>
