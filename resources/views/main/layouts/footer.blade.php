@@ -151,9 +151,19 @@
             <div class="col-md-3">
                 <div class="ftco-footer-widget mb-4">
                     <div class="giayphep">
-                        <a href="giayphep"><img src="main_master/images/logo/icon-footer.png" alt="icon-footer"></a>
+                        {{-- <a href="giayphep"><img src="main_master/images/logo/icon-footer.png" alt="icon-footer"></a>
 						<p style="text-transform: uppercase;">1132/lđtnxh-gp</p>
-						<p>@lang('main.footer-title2')</p>
+						<p>@lang('main.footer-title2')</p> --}}
+                        <a href="giayphep" class="mt-2">
+                            <img src="main_master/files/giayphep/icon_giayphep@2x.png" alt="icon-footer">
+                            <p style="font-size: 11px; color: #e96c18;">DKKD-GP</p>
+                            <p style="font-size: 10px;">GIẤY PHÉP KINH DOANH</p>
+                        </a>
+                        <a href="giayphep" class="mt-2">
+                            <img src="main_master/files/giayphep/icon_giayphep@2x.png" alt="icon-footer">
+                            <p style="font-size: 11px; color: #e96c18;">TVDH-GP</p>
+                            <p style="font-size: 10px;">GIẤY PHÉP TƯ VẤN DU HỌC</p>
+                        </a>
 					</div>
                 </div>
             </div>
@@ -184,8 +194,6 @@
 <script src="main_master/js/bootstrap-datepicker.js"></script>
 <script src="main_master/js/jquery.timepicker.min.js"></script>
 <script src="main_master/js/scrollax.min.js"></script>
-{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> --}}
-{{-- <script src="main_master/js/google-map.js"></script> --}}
 <script src="main_master/js/main.js?v={{time()}}"></script>
 <script>
     $('.testimony-wrap').on('click','.text',function (e) {

@@ -34,17 +34,32 @@ class TinTucController extends Controller
             return view('main.tintuc',compact('tintucs','tintucorther','tinlienquan'));
         }
     }
+    public function tuvanduhoc()
+    {
+        $perpage = 9;
+        $tintucs = DB::table('vhn_tintucs')->where([['stt', '=', '1'],['id_loaitintuc','=','5']])->orderBy('id','desc')->paginate($perpage);
+        $skippage = $tintucs->currentPage() * $perpage;
+        $tintucorther = DB::table('vhn_tintucs')->where([['stt', '=', '1'],['id_loaitintuc','=','5']])->skip($skippage)->take($perpage)->orderBy('id','desc')->get();
+        $tinlienquan = DB::table('vhn_tintucs')->where([['stt', '=', '1'],['id_loaitintuc','=','5']])->orderBy('id','desc')->get(); // BỎ
+        if (App::getLocale() == 'jp') {
+            return redirect('gioithieu');
+        }else{
+            return view('main.tuvanduhoc',compact('tintucs','tintucorther','tinlienquan'));
+        }
+    }
     public function detail($slug){
         $detail = DB::table('vhn_tintucs')->where('slug', '=', $slug)->first();
         $countdh = DB::table('vhn_donhang')->where('stt',1)->count();
         $counttt = DB::table('vhn_tintucs')->where([['stt', '=', '1'],['id_loaitintuc','=','1']])->count();
         $countdd = DB::table('vhn_tintucs')->where([['stt', '=', '1'],['id_loaitintuc','=','2']])->count();
+        $counttvdh = DB::table('vhn_tintucs')->where([['stt', '=', '1'],['id_loaitintuc','=','5']])->count();
         $tintuc = DB::table('vhn_tintucs')->where([['stt', '=', '1'],['id_loaitintuc','=','1']])->skip(0)->take(6)->orderBy('id','desc')->get();
         $dieuduong = DB::table('vhn_tintucs')->where([['stt', '=', '1'],['id_loaitintuc','=','2']])->skip(0)->take(6)->orderBy('id','desc')->get();
+        $tuvanduhoc = DB::table('vhn_tintucs')->where([['stt', '=', '1'],['id_loaitintuc','=','5']])->skip(0)->take(6)->orderBy('id','desc')->get();
         if (App::getLocale() == 'jp') {
             return redirect('gioithieu');
         }else{
-            return view('main.detail',compact('detail','countdh','counttt','countdd','tintuc','dieuduong'));
+            return view('main.detail',compact('detail','countdh','counttt','countdd','tintuc','dieuduong','counttvdh','tuvanduhoc'));
         }
     }
 }

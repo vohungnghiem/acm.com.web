@@ -51,6 +51,7 @@
                                             <select name="id_loaitintuc" class="form-control select2bs4">
                                                 <option value="1">Tin Tức</option>
                                                 <option value="2">Điều dưỡng</option>
+                                                <option value="5">TƯ VẤN DU HỌC</option>
                                             </select>
                                         </div>
                                         <div class="form-group">

@@ -55,6 +55,7 @@
                                             <select name="id_loaitintuc" class="form-control select2bs4">
                                                 <option value="1" @if ($tintuc->id_loaitintuc == 1) selected @endif>Tin Tức</option>
                                                 <option value="2" @if ($tintuc->id_loaitintuc == 2) selected @endif>Điều dưỡng</option>
+                                                <option value="5" @if ($tintuc->id_loaitintuc == 5) selected @endif>Tư vấn du học</option>
                                             </select>
                                         </div>
                                         <div class="form-group">

@@ -2,7 +2,7 @@
 @section('title', 'Giấy phép')
 @section('description', __('messages.layout-giayphep'))
 @section('content')
-<div class="hero-wrap hero-wrap-2" style="background-image: url('main_master/images/banner.jpg'); background-attachment:fixed;">
+{{-- <div class="hero-wrap hero-wrap-2" style="background-image: url('main_master/images/banner.jpg'); background-attachment:fixed;">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
@@ -12,12 +12,26 @@
             </div>
         </div>
     </div>
-</div>
-<section class="ftco-section">
+</div> --}}
+<section class="ftco-section" style="padding-top: 30px;">
     <div class="container">
         <div class="row">
-            <img src="main_master/images/giayphep/giayphep.png" alt="giay-phep" style="width:100%">
+            <div class="col-md-12">
+                <h4>Giấy phép kinh doanh</h4>
+                <iframe src="{{url('main_master/files/giayphep/GPDKKD.pdf')}}" class="d-none d-xl-block" type="application/pdf"
+                width="100%" height="800px"></iframe>
+
+                <br>
+                <h4>Giấy phép tư vấn du học</h4>
+                <iframe src="{{url('main_master/files/giayphep/GPTVDH.pdf')}}" class="d-none d-xl-block" type="application/pdf"
+                width="100%" height="800px"></iframe>
+
+            </div>
         </div>
     </div>
 </section>
 @endsection
+
+{{-- @push('custom-js') --}}
+
+{{-- @endpush --}}

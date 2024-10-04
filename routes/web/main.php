@@ -10,5 +10,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function() {
     // dieuduong
     Route::get('dieuduong','TinTucController@dieuduong');
     Route::get('tintuc','TinTucController@tintuc');
+    Route::get('tuvanduhoc','TinTucController@tuvanduhoc');
+
     Route::get('tintuc/{slug}','TinTucController@detail');
 });
