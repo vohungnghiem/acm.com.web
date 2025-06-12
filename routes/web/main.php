@@ -3,6 +3,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function() {
 	Route::get('/','MainController@home');
     Route::get('gioithieu','MainController@gioiThieu');
     Route::get('giayphep','MainController@giayphep');
+    Route::get('giayphep/{slug}','MainController@giayphepSlug');
+
     Route::post('/storeLienHe', 'MainController@storeLienHe');
     //donhang
     Route::get('donhang','DonHangController@index');

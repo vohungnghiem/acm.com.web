@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="main_master/css/style.css?v={{time()}}">
     <link rel="stylesheet" href="main_master/css/zstyle.css?v={{time()}}">
 
+
+
     <title>@yield('title')</title>
     <meta name="keywords"
         content="Việc làm tiếng Nhật, vieclamtiengnhat, việc làm tiếng nhật, thực tập sinh, thuctapsinh, tu nghiệp sinh, tunghiepsinh, xuất khẩu lao động, xuatkhaulaodong,
@@ -51,6 +53,9 @@ esuhai, kaizen, trường nhật ngữ, truongnhatngu, trường tiếng, truong
     @include('main.layouts.menu')
     @yield('content')
     @include('main.layouts.footer')
+     @stack('custom-css')
+
+    @stack('custom-js')
 </body>
 
 </html>

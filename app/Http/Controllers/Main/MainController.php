@@ -19,17 +19,10 @@ class MainController extends Controller
         $donhang = DB::table('vhn_donhang')->where('stt',1)->orderBy('id','desc')->first();
         $truonghocs = DB::table('vhn_truonghoc')->where('stt', '=', '1')->orderBy('id','desc')->get();
 
-        // $banner = DB::table('vhn_banners')->where('stt', '=', '1')->orderBy('id','asc')->get();
-        // $gioithieuhome = DB::table('vhn_gioithieuhome')->where([['stt', '=', '1'],['ten','!=','ACM']])->orderBy('id','asc')->get();
-        // $gioithieuhomefirst= DB::table('vhn_gioithieuhome')->where([['stt', '=', '1'],['ten','=','ACM']])->orderBy('id','asc')->get();
-        // $tintucorther = DB::table('vhn_tintucs')->where([['stt', '=', '1'],['id_loaitintuc','=','1']])->skip(6)->take(6)->orderBy('id','desc')->get();
-        // $hinhanh = DB::table('vhn_hinhanhs')->where('stt','=','1')->orderBy('id','desc')->get();
-
         if (App::getLocale() == 'jp') {
             return redirect('gioithieu');
         }else{
             return view('main.home',compact('donhangs','muctieus','hosocanchuanbis','camnhanhocviens','tintuc','dieuduong','donhang','truonghocs',
-            // 'banner','gioithieuhome','gioithieuhomefirst','tintucorther','hinhanh'
             ));
         }
     }
@@ -38,6 +31,17 @@ class MainController extends Controller
     }
     public function giayphep() {
         return view('main.giayphep');
+    }
+
+     public function giayphepSlug($slug)
+    {
+        try {
+            $licensePage = DB::table('vhn_license_page')->where([['status',1],['slug' ,$slug]])->first();
+            $licensePage->id;
+            return view('main.giayphep-slug',compact('licensePage'));
+        } catch (\Throwable $th) {
+            return redirect('/');
+        }
     }
     public function storeLienHe(Request $request){
         DB::table('vhn_lienhes')->insert(

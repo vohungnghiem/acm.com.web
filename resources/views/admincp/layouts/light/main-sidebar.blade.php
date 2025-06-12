@@ -140,6 +140,12 @@
                         <p>Đơn hàng</p>
                     </a>
                 </li>
+                 <li class="nav-item">
+                    <a href="admincp/license-page" class="nav-link">
+                        <i class="nav-icon fas fa-ellipsis-h"></i>
+                        <p>Giấy phép</p>
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>

@@ -150,6 +150,16 @@ Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin'
         Route::post('status','DonHangController@status');
         Route::post('destroy', 'DonHangController@destroy');
     });
+
+    Route::group(['prefix' => 'license-page'],function(){
+        Route::get('/','LicensePageControler@index');
+        Route::get('create','LicensePageControler@create');
+        Route::post('store', 'LicensePageControler@store');
+        Route::get('edit/{id}', 'LicensePageControler@edit');
+        Route::post('{id}/update', 'LicensePageControler@update');
+        Route::post('status','LicensePageControler@status');
+        Route::post('destroy', 'LicensePageControler@destroy');
+    });
 });
 // database
 Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers\Admin','prefix' => 'admincp'], function() {
