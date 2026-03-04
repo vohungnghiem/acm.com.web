@@ -4,6 +4,38 @@
     background-color: #333;
     border-radius: 30px;
 }
+
+.footer-fee-box {
+    margin: 18px auto 0;
+    max-width: 540px;
+    padding: 16px 18px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.28);
+    color: #fff;
+}
+
+.footer-fee-box h5 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffe38a;
+}
+
+.footer-fee-box ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.footer-fee-box li {
+    font-size: 20px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.footer-fee-box li:last-child {
+    margin-bottom: 0;
+}
 .hero-wrap .overlay {
     background: linear-gradient(to right, #08070a 0%, #3e3e23ed 100%);
 }
@@ -154,5 +186,17 @@ footer .giayphep a img {
     }
     .section-donhang .donhang-info {
         width: auto;
+    }
+
+    .footer-fee-box {
+        padding: 14px;
+    }
+
+    .footer-fee-box h5 {
+        font-size: 23px;
+    }
+
+    .footer-fee-box li {
+        font-size: 18px;
     }
 }

@@ -19,6 +19,13 @@
                          <p class="btn contact-bi"><i class="bi bi-telephone"></i> {{ $item->dienthoai }}</p>
                          <p class="btn contact-bi"><i class="bi bi-envelope"></i> {{ $item->email }}</p>
                      @endforeach
+                     <div class="footer-fee-box text-left">
+                         <h5>CHI PHI PHÁT SINH</h5>
+                         <ul>
+                             <li>Phí dịch vụ: Tuỳ ngành nghề 0 vnđ đến 2 tháng lương</li>
+                             <li>Phí đào tạo sơ cấp: 5,900,000 vnđ</li>
+                         </ul>
+                     </div>
                      <div class="row d-flex justify-content-center mt-5">
                          <div class="col-md-8">
                              <form method="post" action="storeLienHe" class="subscribe-form">
